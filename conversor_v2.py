@@ -34,8 +34,8 @@ combobox_categorias_desplegable = ttk.Combobox(ventana_principal, values=list(co
 combobox_categorias_desplegable.current(0)
 combobox_categorias_desplegable.pack()
 
-# Combobox de unidades origen
-tk.Label(ventana_principal, text="De: ").pack(pady=5)
+# Etiqueta "De: " y Combobox para las de unidades origen
+tk.Label(ventana_principal, text="De: ").pack(pady=5) #.pack() muestra el widget en la interfaz
 unidad_origen = ttk.Combobox(ventana_principal, state="readonly")
 unidad_origen.pack()
 
@@ -53,10 +53,10 @@ entrada.pack(pady=5)
 resultado = tk.Label(ventana_principal, text="", font=("Arial", 10, "bold"))
 resultado.pack(pady=15)
 
-# Función para atualizar unidades cuando cambia el tipo
+# Función para atualizar unidades cuando cambia el tipo -----------------------------------------------
 def actualizar_unidades(event=None):
     categoria_seleccionada = combobox_categorias_desplegable.get()
-    if categoria_seleccionada == "Temperatura":
+    if categoria_seleccionada == "Temperatura": 
         unidades = conversiones["Temperatura"]
     else:
         unidades = list(conversiones[categoria_seleccionada].keys())
