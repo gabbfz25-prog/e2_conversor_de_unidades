@@ -111,6 +111,9 @@ def convertir_temperaturas():
                 resultado_valor = (valor - 32) * 5/9 + 273.15
             elif origen == "Kelvin" and destino == "Fahrenheit":
                 resultado_valor = (valor - 273.15) * 9/5 + 32
+        resultado.config(
+            text=f"{valor} {origen} = {resultado_valor:.4f} {destino}"
+        )   
     except ValueError:
         resultado.config(text="Ingrese un número válido")
 
